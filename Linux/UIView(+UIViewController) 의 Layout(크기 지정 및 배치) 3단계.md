@@ -17,8 +17,6 @@
    
    UIView의 drawRect(rect: CGRect) 가 호출되어 화면에 그려짐 
 
-
-
 #### UIViewController에서 레이아웃이 결정되는 과정
 
 1. viewWillLayoutSubviews() 호출
