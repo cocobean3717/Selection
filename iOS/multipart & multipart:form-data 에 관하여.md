@@ -1,6 +1,6 @@
 ## multipart & multipart/form-data 에 관하여
 
----
+
 
 ### 클라이언트 -> 서버로 이미지를 업로드할 때는...
 
