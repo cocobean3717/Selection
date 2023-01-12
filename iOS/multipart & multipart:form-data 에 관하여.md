@@ -1,16 +1,16 @@
-### multipart & multipart/form-data 에 관하여
+## multipart & multipart/form-data 에 관하여
 
 ---
 
-##### 클라이언트 -> 서버로 이미지를 업로드할 때는...
+### 클라이언트 -> 서버로 이미지를 업로드할 때는...
 
 jpg, png 형태로 전송되는 것이 아닌 **이미지도 문자**로 이루어져 있기 때문에,
 
 문자를 HTTP request body에 담아서 서버로 전송함
 
+### 
 
-
-##### multipart/form-data
+### multipart/form-data
 
 클라이언트에서 HTTP 요청 시 HTTP header 에 인코딩 타입을 지정할 수 있는데, 서버는 이 **인코딩 타입을 보고** request body 의 내용을 해석함.
 
@@ -18,9 +18,9 @@ jpg, png 형태로 전송되는 것이 아닌 **이미지도 문자**로 이루�
 
 인코딩 타입은 request method 가 **post** 인 경우에만 사용할 수 있음 (request body 에 데이터를 담는건 post 만 가능하기 때문에 그런 것으로 보임)
 
+### 
 
-
-##### 인코딩 타입 (HTML 5 기준)
+### 인코딩 타입 (HTML 5 기준)
 
 **application/x-www-form-urlencoded**: **기본값**, 서버로 보내기 전 모든 문자를 인코딩 하라고 명시
 
@@ -28,15 +28,13 @@ jpg, png 형태로 전송되는 것이 아닌 **이미지도 문자**로 이루�
 > (ex url 인코딩 된 body를 서버가 이진수로 읽으면 11101010 10110000 10000000 을 한 묶음으로 해석하여 이숫자에 해당하는 문자[한글 "가"]로 치환함) 
 > 로 읽어야 원 뜻이 전달 되지만 인코딩을 하지않고 서버에서 1byte 씩 ("가" 라는 문자로 인식되지 않고 다른 3개의 문자로 인식) request body 를 해석한다면 전혀 다른 문자로 치환되어 서버에서 처리될 것임
 
-
-
 **multipart/form-data**: 모든 문자를 인코딩하지 않음 명시 (이미지나 영상의 문자가 인코딩 되면 깨질 것이므로...)
 
 **text/plain**: 공백문자(space)만  "+" 기호로 변환, 나머지는 인코딩하지 않음
 
+### 
 
-
-##### multipart
+### multipart
 
 일반적으로 request body 에는 한 종류의 타입이 대부분이고, 따라서 Content-type 도 타입을 하나만 명시할 수 있음
 
@@ -49,7 +47,8 @@ jpg, png 형태로 전송되는 것이 아닌 **이미지도 문자**로 이루�
 그래서 등장한 것이 **multipart** 타입임
 
 
-[참고]
+
+**[참고]**
 
 https://velog.io/@shin6403/HTTP-multipartform-data-%EB%9E%80
 

@@ -1,10 +1,10 @@
-*AController <- 응답을 받을 컨트롤러*
+> *AController <- 응답을 받을 컨트롤러*
+> 
+> *BController <- 응답을 보낼 컨트롤러*
 
-*BController <- 응답을 보낼 컨트롤러*
 
 
-
-##### Delegate 패턴을 활용한 뷰 컨트롤러간 데이터 전송
+### Delegate 패턴을 활용한 뷰 컨트롤러간 데이터 전송
 
 > NotifyControllerHiDelegate <- 응답을 받고 싶은 컨트롤러가 채택하면 응답을 받을 수 있는 프로토콜 선언
 
@@ -20,7 +20,9 @@
 
 5. BController 에서 AController 로 응답하고 싶을 때 delegate.onReceive() 호출
 
-##### Closure 를 활용한 뷰 컨트롤러간 데이터 전송
+### 
+
+### Closure 를 활용한 뷰 컨트롤러간 데이터 전송
 
 1. BController 에 onReceiveClosure: (() -> ())? 변수 선언
 
