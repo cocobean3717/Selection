@@ -8,7 +8,7 @@ jpg, png 형태로 전송되는 것이 아닌 **이미지도 문자**로 이루�
 
 문자를 HTTP request body에 담아서 서버로 전송함
 
-### 
+
 
 ### multipart/form-data
 
@@ -18,7 +18,7 @@ jpg, png 형태로 전송되는 것이 아닌 **이미지도 문자**로 이루�
 
 인코딩 타입은 request method 가 **post** 인 경우에만 사용할 수 있음 (request body 에 데이터를 담는건 post 만 가능하기 때문에 그런 것으로 보임)
 
-### 
+
 
 ### 인코딩 타입 (HTML 5 기준)
 
@@ -32,7 +32,7 @@ jpg, png 형태로 전송되는 것이 아닌 **이미지도 문자**로 이루�
 
 **text/plain**: 공백문자(space)만  "+" 기호로 변환, 나머지는 인코딩하지 않음
 
-### 
+
 
 ### multipart
 
