@@ -21,7 +21,7 @@ brew install --cask <패키지명>
 ##### 패키지 확인
 
 ```bash
-brew search <패키지명>  # 패키지 있는지 검
+brew search <패키지명>  # 패키지 있는지 검색
 brew list             # 설치된 패키지 목록 표시 (= brew ls)
 brew info <패키지명>    # 패키지 정보 표시
 ```
