@@ -32,3 +32,4 @@ brew info <패키지명>    # 패키지 정보 표시
 brew cleanup <패키지명>    # 해당 패키지의 최신버전을 제외한 버전 모두 삭제
 brew uninstall <패키지명>  # 해당 패키지 삭제
 ```
+
