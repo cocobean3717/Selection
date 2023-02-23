@@ -10,6 +10,7 @@
  - Selector
  - Data
  - Closure Capture
+ - Simulated Metrics
 
 ### Network
 - Bearer
