@@ -91,8 +91,10 @@ extension UIView {
 }
 
 // 사용법
-/// - note: 
-let view: CommonTextField = UIView.loadFromNib()
+/// - note: MyXibCustomView 참조
+if let customView: CustomView = UIView.loadFromNib() {
+  // do something
+}
 ```
 
 <br />
