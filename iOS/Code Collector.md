@@ -39,7 +39,7 @@ override func layoutSubviews() {
 
 <br />
 
-```Swift
+```swift
 // 노치 유무, 키보드 유무에 따라 UI 변경 시 사용
 // 키보드 표시 중일 때
 /// - parameter: keyboardHeight (키보드 현재 높이)
@@ -47,6 +47,16 @@ override func layoutSubviews() {
 UIView.transform = CGAffineTransform(translationX: 0, -(keyboardHeight - bottomSafeAreaSize))
 // 키보드 미표시 시
 UIView.transform = .identity
+
+// MARK: AffineTransform 의 경우 스크롤 뷰가 포함된 뷰에선 사용이 힘듦
+// 아래는 제약 조건 수정을 통해 UI 변경 시 사용 (스냅킷 사용)
+UIView.animate(withDuration: 0.1) { [self] in
+		btNext.snp.remakeConstraints {
+      	$0.bottom.equalToSuperview().inset(keyboardHeight)
+    }
+   	/// - warning: 상위 뷰를 다시 그려줘야 정상적인 애니매이션이 표시됨
+		view.layoutIfNeeded()
+}
 ```
 
 <br />
