@@ -4,6 +4,17 @@
 
 <br />
 
+### 인덱스 (Command + f)
+
+1. 테이블 뷰 높이 동적 변경 시
+2. 테이블 뷰 셀 여백 변경 시
+3. 키보드 유무에 따라 UI 변경 시
+4. 제스쳐 진행 도중 다른 입력을 막을 때 (페이지 뷰 컨트롤러)
+5. Xib 파일 인스턴스화 시
+6. 인스턴스의 클래스 명을 String 형태로 얻고싶을 때
+
+<br />
+
 ```swift
 // 테이블 뷰 높이 동적 변경 시 사용가능 할 것으로 보임
 override func viewWillLayoutSubviews() {
@@ -24,6 +35,18 @@ override func layoutSubviews() {
 		let insets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     contentView.frame = contentView.frame.inset(by: insets)
 }
+```
+
+<br />
+
+```Swift
+// 노치 유무, 키보드 유무에 따라 UI 변경 시 사용
+// 키보드 표시 중일 때
+/// - parameter: keyboardHeight (키보드 현재 높이)
+/// - parameter: keyboardHeight (하단 SafeArea 영역 사이즈)
+UIView.transform = CGAffineTransform(translationX: 0, -(keyboardHeight - bottomSafeAreaSize))
+// 키보드 미표시 시
+UIView.transform = .identity
 ```
 
 <br />
@@ -69,7 +92,7 @@ func pageViewController(_ pageViewController: UIPageViewController, didFinishAni
     }
 }
 
-// 제스쳐 진행 도중 다른 입력을 막음
+// 제스쳐 진행 도중 다른 입력을 막을 때 (페이지 뷰 컨트롤러)
 func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
     /*
      페이지간 전환을 매우 빠르게 할 경우, pageViewController(didFinishAnimating) 메소드가 호출되지 않는 경우를 확인하였음,
