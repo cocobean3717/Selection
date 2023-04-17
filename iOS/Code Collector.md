@@ -12,6 +12,7 @@
 4. 제스쳐 진행 도중 다른 입력을 막을 때 (페이지 뷰 컨트롤러)
 5. Xib 파일 인스턴스화 시
 6. 인스턴스의 클래스 명을 String 형태로 얻고싶을 때
+7. 이미지 압축
 
 <br />
 
@@ -135,5 +136,33 @@ if let customView: CustomView = UIView.loadFromNib() {
 ```swift
 // 인스턴스의 클래스 명을 String 형태로 얻고싶을 때...
 let className = String(describing: type(of: self))
+```
+
+<br />
+
+```swift
+// 이미지 압축
+public static func uiImageToData(image: UIImage) -> Data? {
+let compressionQuality = getCompressionQuality(image: image)
+
+return image.jpegData(compressionQuality: compressionQuality)
+}
+    
+private static func getCompressionQuality(image: UIImage) -> CGFloat{
+var compressionQuality: CGFloat = 1
+var imageKbSize: Double
+
+repeat {
+    if (compressionQuality < 0) {
+	return 0
+    }
+
+    let imgData = NSData(data: image.jpegData(compressionQuality: compressionQuality)!)
+    imageKbSize = (Double(imgData.count) / 1000.0)
+    compressionQuality -= 0.1
+} while imageKbSize > Double(IMAGE_KB_SIZE)
+
+return compressionQuality
+}
 ```
 
