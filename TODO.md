@@ -9,7 +9,6 @@
 ### iOS
  - Selector
  - Data
- - Closure Capture
  - Simulated Metrics
  - UIApplication
  - UITabbarController, UINavigationController 하위 UIViewController 에서 dismiss() 호출 시..?
@@ -17,6 +16,7 @@
  - Combine
  - @State
  - objc_setAssociatedObject
+ - Meta Type
 
 ### Network
 - Bearer

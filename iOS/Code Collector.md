@@ -8,15 +8,19 @@
 
 1. 테이블 뷰 높이 동적 변경 시
 2. 테이블 뷰 셀 여백 변경 시
-3. 키보드 유무에 따라 UI 변경 시
+3. 키보드 유무에 따라 UI 변경 시 사용
 4. 제스쳐 진행 도중 다른 입력을 막을 때 (페이지 뷰 컨트롤러)
 5. Xib 파일 인스턴스화 시
-6. 인스턴스의 클래스 명을 String 형태로 얻고싶을 때
+6. 인스턴스의 클래스 명을 문자열로 얻고싶을 때 (+ 클래스 형을 문자열로 얻고싶을 때)
+7. 요청 완료 후 컨트롤러 내용 보여주고 싶을 때
 
-<br />
+---
+
+  
+
+### 테이블 뷰 높이 동적 변경 시
 
 ```swift
-// 테이블 뷰 높이 동적 변경 시 사용가능 할 것으로 보임
 override func viewWillLayoutSubviews() {
     super.updateViewConstraints()
 
@@ -26,8 +30,9 @@ override func viewWillLayoutSubviews() {
 
 <br />
 
+### 테이블 뷰 셀 여백 변경 시 사용
+
 ```swift
-// 테이블 뷰 셀 여백 변경 시 사용
 // 커스텀 셀 하위에 아래 메소드 오버라이딩
 // 기존 프레임 사이즈를 인셋을 적용한 프레임 사이즈로 변경하는게 키 포인트
 override func layoutSubviews() {
@@ -39,8 +44,9 @@ override func layoutSubviews() {
 
 <br />
 
+### 키보드 유무에 따라 UI 변경 시 사용
+
 ```swift
-// 노치 유무, 키보드 유무에 따라 UI 변경 시 사용
 // 키보드 표시 중일 때
 /// - parameter: keyboardHeight (키보드 현재 높이)
 /// - parameter: keyboardHeight (하단 SafeArea 영역 사이즈)
@@ -60,6 +66,8 @@ UIView.animate(withDuration: 0.1) { [self] in
 ```
 
 <br />
+
+### 제스쳐 진행 도중 다른 입력을 막을 때 (페이지 뷰 컨트롤러)
 
 ```swift
 /* BasePageViewController 생성 후 아래코드 구현해보기 */
@@ -113,8 +121,10 @@ func pageViewController(_ pageViewController: UIPageViewController, willTransiti
 
 <br />
 
+### Xib 파일 인스턴스화 시 사용
+
 ```swift
-// Xib 파일 인스턴스화 시 사용
+
 extension UIView {
     static func loadFromNib<T>() -> T? {
         let identifier = String(describing: T.self)
@@ -132,8 +142,45 @@ if let customView: CustomView = UIView.loadFromNib() {
 
 <br />
 
+### 인스턴스의 클래스 명을 문자열로 얻고싶을 때 (+ 클래스 형을 문자열로 얻고싶을 때)
+
 ```swift
-// 인스턴스의 클래스 명을 String 형태로 얻고싶을 때...
-let className = String(describing: type(of: self))
+class Account {
+  ...
+}
+
+let account = Account()
+
+// 인스턴스의 클래스 명을 문자열로 얻고싶을 때
+let className = String(describing: type(of: account)) // "Account"
+
+// 클래스를 문자열로 얻고싶을 때
+let className = String(describing: Account.self)	// "Account"
+
+// + extension 내부에서 클래스 명 얻고 싶을 때
+let className = String(decribing: type(of: self))
+```
+
+<br />
+
+### 요청 완료 후 컨트롤러 내용 보여주고 싶을 때
+
+```swift
+class ViewController: UIViewController {
+  @override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    view.isHidden = true
+    
+    requestAPI()
+  }
+  
+  func requestAPI() {
+    API.request() {
+      // 응답 완료 블럭
+      view.isHidden = false
+    }
+  }
+}
 ```
 
