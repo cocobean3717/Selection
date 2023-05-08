@@ -13,7 +13,7 @@
 5. Xib 파일 인스턴스화 시
 6. 인스턴스의 클래스 명을 문자열로 얻고싶을 때 (+ 클래스 형을 문자열로 얻고싶을 때)
 7. 요청 완료 후 컨트롤러 내용 보여주고 싶을 때
-
+8. 이미지 압축
 ---
 
   
@@ -181,6 +181,34 @@ class ViewController: UIViewController {
       view.isHidden = false
     }
   }
+}
+```
+
+<br />
+
+```swift
+// 이미지 압축
+public static func uiImageToData(image: UIImage) -> Data? {
+let compressionQuality = getCompressionQuality(image: image)
+
+return image.jpegData(compressionQuality: compressionQuality)
+}
+    
+private static func getCompressionQuality(image: UIImage) -> CGFloat{
+var compressionQuality: CGFloat = 1
+var imageKbSize: Double
+
+repeat {
+    if (compressionQuality < 0) {
+	return 0
+    }
+
+    let imgData = NSData(data: image.jpegData(compressionQuality: compressionQuality)!)
+    imageKbSize = (Double(imgData.count) / 1000.0)
+    compressionQuality -= 0.1
+} while imageKbSize > Double(IMAGE_KB_SIZE)
+
+return compressionQuality
 }
 ```
 
