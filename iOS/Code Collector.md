@@ -186,8 +186,9 @@ class ViewController: UIViewController {
 
 <br />
 
+### 이미지 압축
+
 ```swift
-// 이미지 압축
 public static func uiImageToData(image: UIImage) -> Data? {
 let compressionQuality = getCompressionQuality(image: image)
 
