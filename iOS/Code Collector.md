@@ -10,7 +10,7 @@
 2. 테이블 뷰 셀 여백 변경 시
 3. 키보드 유무에 따라 UI 변경 시 사용
 4. 제스쳐 진행 도중 다른 입력을 막을 때 (페이지 뷰 컨트롤러)
-5. Xib 파일 인스턴스화 시
+5. Xib 파일 언아카이브 시 사용
 6. 인스턴스의 클래스 명을 문자열로 얻고싶을 때 (+ 클래스 형을 문자열로 얻고싶을 때)
 7. 요청 완료 후 컨트롤러 내용 보여주고 싶을 때
 8. 이미지 압축
@@ -121,7 +121,7 @@ func pageViewController(_ pageViewController: UIPageViewController, willTransiti
 
 <br />
 
-### Xib 파일 인스턴스화 시 사용
+### Xib 파일 언아카이브 시 사용
 
 ```swift
 
@@ -145,6 +145,19 @@ if let customView: CustomView = UIView.loadFromNib() {
 ### 인스턴스의 클래스 명을 문자열로 얻고싶을 때 (+ 클래스 형을 문자열로 얻고싶을 때)
 
 ```swift
+/** MetaType?
+	스위프트에서 클래스는 그 자체로 메타타입.
+		ex) Class == "Class" 라는 이름을 가진 메타 타입
+	메타타입의 값(= 인스턴스의 타입)을 얻고 싶다면..?
+		Class.self 사용
+*/
+/** MetaType 의 사용방법
+	클래스의 메타타입(MetaType)을 얻기 위해서 type(of:) 메소드를 사용할 수 있음
+		ex) type(of: instance)
+	MetaType 을 문자열로 추출하고 싶은 경우 Class.self 사용
+		ex) String(describing: Class.self)
+*/
+
 class Account {
   ...
 }
