@@ -152,10 +152,10 @@ if let customView: CustomView = UIView.loadFromNib() {
 		Class.self 사용
 */
 /** MetaType 의 사용방법
-	클래스의 메타타입(MetaType)을 얻기 위해서 type(of:) 메소드를 사용할 수 있음
+  인스턴스의 메타타입(MetaType)을 얻기 위해서 type(of:) 메소드를 사용할 수 있음
 		ex) type(of: instance)
 	MetaType 을 문자열로 추출하고 싶은 경우 Class.self 사용
-		ex) String(describing: Class.self)
+		ex) String(describing: Class.self) <- String(describing: Type.Type)
 */
 
 /**
