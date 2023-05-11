@@ -158,6 +158,12 @@ if let customView: CustomView = UIView.loadFromNib() {
 		ex) String(describing: Class.self)
 */
 
+/**
+	"헷갈린다면 이렇게 생각. String 이 type이고 “Hello World” 가 instance의 value 인 것처럼, 
+	String.Type 은 type 이고 String.self 가 metatype의 value 이다"
+	-	https://sujinnaljin.medium.com/swift-self-type-protocol-self%EA%B0%80-%EB%AD%94%EB%94%94%EC%9A%94-7839f6aacd4
+*/
+
 class Account {
   ...
 }
