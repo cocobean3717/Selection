@@ -16,7 +16,6 @@
  - Combine
  - @State
  - objc_setAssociatedObject
- - Meta Type
 
 ### Network
 - Bearer

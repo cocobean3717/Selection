@@ -163,6 +163,7 @@ if let customView: CustomView = UIView.loadFromNib() {
 	String.Type 은 type 이고 String.self 가 metatype의 value 이다"
 	-	https://sujinnaljin.medium.com/swift-self-type-protocol-self%EA%B0%80-%EB%AD%94%EB%94%94%EC%9A%94-7839f6aacd4
 */
+// - MARK: 자세한 내용은 해당 파일 동일 디렉토리 "MetaType" 참고
 
 class Account {
   ...
