@@ -69,8 +69,7 @@ present(viewController, animated: true)
 **문제점**
 
 - Interface Builder 를 쓰지 못하므로, UI를 소스 코드로 손수 그려줘야하므로 복잡한 UI를 구현하기 힘듦
-- Interface Builder 에서 컨트롤러 전환 추적이 힘듦
-- 뷰 컨트롤러 **생명주기**가 완전하지 않을 가능성이 있음
+- Interface Builder 에서 컨트롤러 전환(segue) 추적이 힘듦
 
 
 
