@@ -7,6 +7,7 @@
 
 </br>
 </br>
+
 ## Main Run Loop
 
 > 함수를 알아보기전에 먼저 `Main Run Loop` 에 대한 개념부터 짚고 넘어갈 필요가 있다.
@@ -15,6 +16,7 @@
 
 </br>
 </br>
+
 ## Update Cycle (= drawing cycle)
 
 > 변경된 사항을 화면에 다시 그려주는 시점.
@@ -22,6 +24,7 @@
 
 </br>
 </br>
+
 ## init(frame: CGRect) & init(coder: NSCoder)
 > UIView 가 초기화될 때 호출되는 함수.
 > 커스텀 뷰를 구현하고 싶다면 UIView 를 상속 받고 위 두 이니셜라이저를 구현해주어야한다.
@@ -44,6 +47,7 @@ self.view.addSubview(viewFromNib)
 
 </br>
 </br>
+
 ## layoutSubViews()
 
 > UIView 의 위치나 크기(frame & bounds), 제약조건(contraints)들이 변경되어서 다시 그려야져야할 필요가 있을 때 시스템이 자동으로 호출하는 함수.
