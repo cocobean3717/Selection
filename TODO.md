@@ -5,16 +5,15 @@
  - Locale
  - TimeZone
  - BootLoader
+ - Unicode & UTF
 
 ### iOS
  - Selector
  - Data
  - Simulated Metrics
  - UIApplication
- - UILayoutGuilde
  - Combine
  - @State
- - objc_setAssociatedObject
 
 ### Network
 - Bearer
