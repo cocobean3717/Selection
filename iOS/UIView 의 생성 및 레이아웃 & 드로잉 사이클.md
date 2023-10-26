@@ -49,39 +49,39 @@ self.view.addSubview(viewFromNib)
 
 > UIView 의 위치나 크기(frame & bounds), 제약조건(contraints)들이 변경되어서 다시 그려야져야할 필요가 있을 때 시스템이 자동으로 호출하는 함수.
 > _(1. 뷰의 사이즈가 재 조정되거나, 2. 하위뷰가 추가되거나, 3. 스크롤 뷰에서 스크롤 되거나, 4. 디바이스가 회전하거나, 5. 뷰의 제약조건이 갱신될 때 자동으로 layoutSubviews 가 호출된다.)_
-> 해당 함수가 호출되면 현재 UIView 의 자식 뷰들의 layoutSubViews() 메소드가 호출됩니다.
-> 호출 순서는 현재 뷰 -> 자식 뷰 순서대로 호출됩니다.
+> 해당 함수가 호출되면 현재 UIView 의 자식 뷰들의 layoutSubViews() 메소드가 호출된다.
+> 호출 순서는 현재 뷰 -> 자식 뷰 순서대로 호출된다.
 
 </br>
 </br>
 
 ## setNeedsLayout()
->다음 `Update Cycle` 에 레이아웃을 갱신해야함을 시스템에게 알립니다.
+>다음 `Update Cycle` 에 레이아웃을 갱신해야함을 시스템에게 알린다.
 >이 메소드를 호출한 UIView 는 다음 `Update Cycle` 에서 `layoutSubviews()` 가 호출된다. (= 갱신 예약)
 
 ## layoutIfNeeded()
-> **즉시** 레이아웃을 갱신합니다.
-> 이 메소드를 호출한 UIView 는 그 **즉시** 갱신됩니다. 일반적으로 뷰에 즉시 값이 반영되어야하는 애니메이션을 적용할 경우 사용됩니다.
+> **즉시** 레이아웃을 갱신한다.
+> 이 메소드를 호출한 UIView 는 그 **즉시** 갱신된다. 일반적으로 뷰에 즉시 값이 반영되어야하는 애니메이션을 적용할 경우 사용된다.
 
 ## setNeedsDisplay()
-> 다음 `Update Cycle` 에 다시 그려야한다는 것을 시스템에게 알립니다.
-> `Update Cycle` 에서 `draw(_:CGRect)` 를 호출합니다.
+> 다음 `Update Cycle` 에 다시 그려야한다는 것을 시스템에게 알린다.
+> `Update Cycle` 에서 `draw(_:CGRect)` 를 호출한다.
 
 ### draw(\_: CGRect)
-> 뷰의 콘텐츠가 실질적으로 그려질 때 호출됩니다.
-> 코어 그래픽스 나 다른 드로잉 API 를 사용한 커스텀 뷰에서 그릴 때 사용하면 됩니다.
+> 뷰의 콘텐츠가 실질적으로 그려질 때 호출된다.
+> 코어 그래픽스 나 다른 드로잉 API 를 사용한 커스텀 뷰에서 그릴 때 사용하면된다.
 
 ### willMove(toSuperview: UIView?)
-> 상위 뷰에서 현재 뷰가 추가되거나 제거될 때 호출됩니다.
+> 상위 뷰에서 현재 뷰가 추가되거나 제거될 때 호출된다.
 
 ### didMoveToSuperview()
-> 상위 뷰에서 현재 뷰가 추가되거나 제거될 때 호출됩니다.
+> 상위 뷰에서 현재 뷰가 추가되거나 제거될 때 호출된다.
 
 ### didMoveToWindow()
-> 윈도우에서 뷰가 추가되거나 제거될 때 호출됩니다.
+> 윈도우에서 뷰가 추가되거나 제거될 때 호출된다.
 
 ### removeFromSuperview()
-> 상위뷰에서 제거될 때 호출됩니다.
+> 상위뷰에서 제거될 때 호출된다.
 
 ### (보충) UIView 레이아웃 메소드 호출 순서
 1. requiresConstraintBasedLayout (= translatesAutoresizingMaskIntoConstraints)
