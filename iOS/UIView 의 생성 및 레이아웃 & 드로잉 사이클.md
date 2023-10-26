@@ -6,7 +6,6 @@
 > 궁극적인 목표인 layoutIfNeeded, setNeedsLayout 가 정확하게 무엇을 실행하는 함수인지 알아보자.
 
 </br>
-</br>
 
 ## Main Run Loop
 
@@ -15,14 +14,12 @@
 > 처리하며(위임된 핸들러가 실질적으로 이벤트를  처리한다.) 처리가 끝난 뒤 권한이 다시 `Main Run Loop` 로 돌아오면, 변경사항에 대한 UI를 업데이트하는 `Update Cycle` 이 호출된다.
 
 </br>
-</br>
 
 ## Update Cycle (= drawing cycle)
 
 > 변경된 사항을 화면에 다시 그려주는 시점.
 > 시스템은 실질적으로 변경된 사항이 있거나, 핸들러가 종료되어 `Main Run Loop` 로 반환될 때, Update Cycle 로 전환하여 화면을 갱신한다.
 
-</br>
 </br>
 
 ## init(frame: CGRect) & init(coder: NSCoder)
@@ -38,12 +35,12 @@ let view = CustomView(frame: .init(x: 0, y: 0, width: 200: height: 200))
 
 **init(coder: NSCorder)**
 ```swift
-// Xib 나 Storyboard 로 구성된 UI를 코드상에서 사용하기 위해서 사용된다.
+// Xib 로 구성된 UI를 코드상에서 사용하기 위해서 사용된다.
 let nib = Bundle.main.loadNibNamed("CustomView", owner: self, options: nil)!
 let viewFromNib = nib.first as! CustomView
 self.view.addSubview(viewFromNib)
 ```
-> Xib 나 Storyboard 는 xml 형식의 파일로 저장되어있는데, 이를 실제로 사용하기 위해서는 클래스를 객체화 시키는 것 처럼 xml 을 실체화(메모리 적재) 시키는 작업이 필요하다. 이걸 NSCoder(실제론 NSUnarchiver) 가 수행하여 우리는 인터페이스 빌더로 작성된 UI를 소스코드상에서도 사용할 수 있다.
+> Xib는 xml 형식의 파일로 저장되어있는데, 이를 실제로 사용하기 위해서는 클래스를 객체화 시키는 것 처럼 xml 을 실체화(메모리 적재) 시키는 작업이 필요하다. 이걸 NSCoder(실제론 NSUnarchiver) 가 수행하여 우리는 인터페이스 빌더로 작성된 UI를 소스코드상에서도 사용할 수 있다.
 
 </br>
 </br>
