@@ -45,6 +45,9 @@ print(UIScreen.main.bounds.size) // (393.0, 852.0)
 iPhone 4 부터 Retina Display 를 지원하는 기기의 경우, 2배율이 적용되어 1pt 당 4픽셀(2x2)을 가지게 된다.
 iPhone X 부터 Retina HD Display 를 지원하기 시작하면서, 3배율이 적용되어 1pt  당 9픽셀(3x3)을 가지게 되었다.
 
+<img width="1224" alt="Scale_Factor" src="https://github.com/GuTaeHo/Selection/assets/63102954/39e16c56-d753-4c9b-8dd6-929514d63d12">
+
+
 </br>
 
 ### 정리
@@ -63,4 +66,7 @@ Point > Pixel 변환 도표 링크 - https://www.paintcodeapp.com/news/ultimate-
 - https://dev-dream-world.tistory.com/189 (Pixel 과 Point: Scale Factor 도표 포함)
 - https://developer.apple.com/documentation/uikit/uiscreen/1617836-scale (scale)
 - https://ko.wikipedia.org/wiki/%EC%8A%A4%EC%BC%80%EC%9D%BC_%ED%8C%A9%ED%84%B0 (위키백과, scale factor)
+
+## 이미지 출처
+- https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions
 
