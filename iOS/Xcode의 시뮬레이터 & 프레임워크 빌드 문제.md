@@ -5,6 +5,7 @@ Xcode12 에서 ARM기반 맥을 지원함에 따라 아이폰 시뮬레이터에
 
 ### 해결 방법
 Xcode > Build Setting 에
+
 ![Xcode 아키텍쳐 설정](../Resource/Image/IOS/IOS_XcodeSettings1.png)
 
 1. `Excluded Architectures` 에 `arm64` 를 추가
@@ -13,14 +14,15 @@ Xcode > Build Setting 에
 
 ### 상세 분석
 **시뮬레이터는 맥에서 동작하는 특성상 맥 CPU의 아키텍쳐를 따라간다.**
+</br>
 Xcode 12 부터 구형 맥 (x86_64) 과 신형 맥 (arm64) 환경의 시뮬레이터를 모두 지원하기 위해 `x86_64` 와 `arm64` 두 종류의 시뮬레이터를 제공하는데,
 맥과 시뮬레이터 서로간의 CPU 아키텍쳐가 맞지 않으면 당연히 실행되지 않는다.
-
+</br>
 
 
 
 ### 만약, 실리콘 맥만 사용할 경우...
-사용하는 맥이 `arm64(apple silicon)`를 사용할 경우, 시뮬레이터 빌드 최적화를 위해 x86_64 를 제외할 수 있다.
+사용하는 맥이 `arm64(apple silicon)`를 사용할 경우, 시뮬레이터 빌드 최적화를 위해 `x86_64` 를 제외할 수 있다.
 
 # 프레임워크 빌드 문제
 
