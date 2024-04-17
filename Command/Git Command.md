@@ -8,6 +8,8 @@
 git config --global core.quotepath false
 ```
 
+</br>
+
 ### .DS_Store 파일이 깃에 포함되는 문제
 1. 하위 모든 디렉토리의 .DS_Store 파일 일괄 제거
 ```bash
@@ -18,7 +20,7 @@ find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
 ```bash
 git rm -r --cached .    // 기존에 작성된 내역을 제거 (실제 파일은 제거되지 않으니 안심)
 git add .
-git commit -m "Apply .gitignore"
+git commit -m "applying .gitignore"
 ```
 
 3. .gitignore 파일 생성 후 아래 내용 추가
