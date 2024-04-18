@@ -34,4 +34,4 @@
 
 **예시** 
 "신규 가맹점 쿠폰발급기능 개발" 건을 진행할 경우
-> feature/coupon
+> feature/coupon-download
