@@ -39,3 +39,14 @@ git commit -m "applying .gitignore"
 **/.DS_Store
 **/._.DS_Store
 ```
+
+<br>
+
+### Git Conflict
+깃 충돌이 일어났을 때, 터미널 상에서 해결하기 위한 유용한 커맨드를 소개한다.
+
+**git reflog**  
+![Git Reflog](../Resource/Image/Command/imgGitReflog.png)  
+*Gif Reflog*  
+
+> 최근 커밋부터 커밋 번호를 출력한다.
